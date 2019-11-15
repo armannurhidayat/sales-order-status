@@ -1,0 +1,29 @@
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="view_sales_status_form">
+			<field name="name">view_sales_status.form</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after"> <!-- Menyisipkan status_so setelah partner_id -->
+					<field name="status_so"/>
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_sales_status_tree">
+			<field name="name">view_sales_status.tree</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_tree"/>
+
+			<field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="status_so"/>
+				</field>
+			</field>
+		</record>
+
+	</data>
+</odoo>
